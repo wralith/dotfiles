@@ -23,6 +23,15 @@ local M = {}
 	Example:  (toggles line numbers)
 		map("n", "<C-n>", ":set rnu!<CR>", opt)
 --]]
+--
+-- {{{ move lines
+map('n', '<A-j>', ':m .+1<CR>==', opt)
+map('n', '<A-k>', ':m .-2<CR>==', opt)
+map('i', '<A-j>', '<Esc>:m .+1<CR>==', opt)
+map('i', '<A-k>', '<Esc>:m .-2<CR>==', opt)
+map('v', '<A-j>', ":m '>+1<CR>gv=gv", opt)
+map('v', '<A-k>', ":m '>-2<CR>gv=gv", opt)
+-- }}}
 
 -- {{{ Umapping
 --unmap('n', '<leader>f')
@@ -35,7 +44,11 @@ map('n', '<C-n>', ':set rnu!<CR>', opt) -- toggle relative line numbers
 map('', '<C-/>', ':CommentToggle<CR>', opt) -- toggle comment on current line or selection
 map('', '<leader>e', ':NvimTreeToggle<CR>', opt) -- toggle nvimtree
 map('n', '<leader>nf', ':Neoformat<CR>', { noremap = true }) -- format current buffer with neoformat
+map('n', '<leader>nb', ':hi Normal guibg=NONE ctermbg=NONE<CR>', opt) -- remove background color
+map('n', '<leader>nv', ':hi NonText guibg=NONE ctermbg=NONE<CR>', opt) -- remove non text background color
 map('n', '<leader>~', ':Dashboard<CR>', opt) -- map show dashboard
+map('n', '<leader>dd', '<cmd> lua vim.diagnostic.open_float() <CR>',opt) -- shows diagnostics in float
+map('n', '<leader>df', '<cmd> lua vim.lsp.buf.hover()<CR>',opt) -- shows diagnostics in float
 
 -- clipboard mappings
 map('n', '<leader>ya', ':%y+<CR>', opt) -- Copy content of entire buffer to system clipboard

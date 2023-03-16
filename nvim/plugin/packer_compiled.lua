@@ -114,11 +114,6 @@ _G.packer_plugins = {
     path = "/home/wralith/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["dashboard-nvim"] = {
-    loaded = true,
-    path = "/home/wralith/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
-    url = "https://github.com/glepnir/dashboard-nvim"
-  },
   everforest = {
     loaded = true,
     path = "/home/wralith/.local/share/nvim/site/pack/packer/start/everforest",
@@ -169,10 +164,20 @@ _G.packer_plugins = {
     path = "/home/wralith/.local/share/nvim/site/pack/packer/start/neoformat",
     url = "https://github.com/sbdchd/neoformat"
   },
+  neovim = {
+    loaded = true,
+    path = "/home/wralith/.local/share/nvim/site/pack/packer/start/neovim",
+    url = "https://github.com/rose-pine/neovim"
+  },
   ["nord.nvim"] = {
     loaded = true,
     path = "/home/wralith/.local/share/nvim/site/pack/packer/start/nord.nvim",
     url = "https://github.com/shaunsingh/nord.nvim"
+  },
+  nvim = {
+    loaded = true,
+    path = "/home/wralith/.local/share/nvim/site/pack/packer/start/nvim",
+    url = "https://github.com/catppuccin/nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -183,11 +188,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/wralith/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
-  },
-  ["nvim-colorizer.lua"] = {
-    loaded = true,
-    path = "/home/wralith/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
-    url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
   ["nvim-comment"] = {
     loaded = true,
@@ -235,6 +235,11 @@ _G.packer_plugins = {
     path = "/home/wralith/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
+  ["rust-tools.nvim"] = {
+    loaded = true,
+    path = "/home/wralith/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
+    url = "https://github.com/simrat39/rust-tools.nvim"
+  },
   ["tabline.nvim"] = {
     loaded = true,
     path = "/home/wralith/.local/share/nvim/site/pack/packer/start/tabline.nvim",
@@ -250,6 +255,11 @@ _G.packer_plugins = {
     path = "/home/wralith/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/home/wralith/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
+  },
   ["vim-go"] = {
     loaded = true,
     path = "/home/wralith/.local/share/nvim/site/pack/packer/start/vim-go",
@@ -264,20 +274,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/wralith/.local/share/nvim/site/pack/packer/start/which-key.nvim",
     url = "https://github.com/folke/which-key.nvim"
-  },
-  ["yaml-companion.nvim"] = {
-    config = { "\27LJ\2\nP\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\1K\0\1\0\16yaml_schema\19load_extension\14telescope\frequire\0" },
-    loaded = true,
-    path = "/home/wralith/.local/share/nvim/site/pack/packer/start/yaml-companion.nvim",
-    url = "https://github.com/someone-stole-my-name/yaml-companion.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: yaml-companion.nvim
-time([[Config for yaml-companion.nvim]], true)
-try_loadstring("\27LJ\2\nP\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\1K\0\1\0\16yaml_schema\19load_extension\14telescope\frequire\0", "config", "yaml-companion.nvim")
-time([[Config for yaml-companion.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

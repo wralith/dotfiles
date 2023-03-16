@@ -13,12 +13,19 @@ o.modelines = 5			-- number of modelines
 
 o.errorbells = false 	-- auditory stimulation annoying
 
+opt.signcolumn = 'yes'
 opt.ruler = false		-- how line number/column
 opt.hidden = true 		-- keeps buffers loaded in the background
 opt.ignorecase = true
 opt.scrolloff = 8   	-- buffer starts scrolling 8 lines from the end of view
 opt.incsearch = true
+opt.spelloptions = "camel"
+opt.spell = true
+opt.spelllang = {'en_us'}
 
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
+g.go_addtags_transform = "camelcase"
 
 -- Tab settings
 o.tabstop = 4 			-- 4 tabstop
@@ -38,3 +45,4 @@ opt.splitright = true
 o.completeopt = 'menuone,noselect'
 
 vim.opt.termguicolors = true
+
