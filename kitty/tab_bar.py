@@ -14,15 +14,16 @@ from kitty.tab_bar import (
 )
 
 opts = get_options()
-icon_fg = as_rgb(color_as_int(opts.color16))
-icon_bg = as_rgb(color_as_int(opts.color8))
+icon_fg = as_rgb(color_as_int(opts.color4))
+icon_bg = as_rgb(color_as_int(opts.color24))
 bat_text_color = as_rgb(color_as_int(opts.color15))
 clock_color = as_rgb(color_as_int(opts.color15))
 date_color = as_rgb(color_as_int(opts.color8))
-SEPARATOR_SYMBOL, SOFT_SEPARATOR_SYMBOL = ("", "")
+SEPARATOR_SYMBOL, SOFT_SEPARATOR_SYMBOL = ("", "")
+# SEPARATOR_SYMBOL, SOFT_SEPARATOR_SYMBOL = ("", "")
 RIGHT_MARGIN = 1
 REFRESH_TIME = 1
-ICON = " W "
+ICON = " \ue627  "
 UNPLUGGED_ICONS = {
     10: "",
     20: "",
@@ -165,6 +166,7 @@ def get_battery_cells() -> list:
 timer_id = None
 right_status_length = -1
 
+
 def draw_tab(
     draw_data: DrawData,
     screen: Screen,
@@ -199,10 +201,9 @@ def draw_tab(
         is_last,
         extra_data,
     )
-    _draw_right_status(
-        screen,
-        is_last,
-        cells,
-    )
+    # _draw_right_status(
+    #     screen,
+    #     is_last,
+    #     cells,
+    # )
     return screen.cursor.x
-

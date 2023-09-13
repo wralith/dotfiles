@@ -1,15 +1,14 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
 #: Fonts {{{
-# font_family      CaskaydiaCove Nerd Font
-# font_family     Dank Mono 
-# font_family      Fira Code
+#: font_family      CaskaydiaCove Nerd Font
+#: font_family      Inconsolata
+font_family      Fira Code
 # font_family      Iosevka
-font_family      JetBrainsMono Nerd Font
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
-adjust_line_height 110%
+#: font_family      JetBrainsMono Nerd Font
 #: italic_font      JetBrainsMono Nerd Font Italic
 # font_size 13.0
 #
@@ -74,7 +73,7 @@ map ctrl+down resize_window shorter 3
 # reset all windows in the tab to default sizes
 map ctrl+home resize_window reset
 
-window_padding_width 0
+# window_padding_width 4
 inactive_text_alpha 0.9
 
 # hide_window_decorations yes
@@ -105,7 +104,7 @@ active_tab_font_style   bold
 include ./catpuccin-frappe.conf
 # foreground #dddddd
 # background #000000
-background_opacity 0.95
+# background_opacity 0.98
 ## background_image none
 # background_image_layout tiled
 # background_image_linear no
@@ -120,9 +119,8 @@ background_opacity 0.95
 map kitty_mod+t new_tab_with_cwd
 map kitty_mod+enter new_window_with_cwd
 
-enable_audio_bell no
 
 # BEGIN_KITTY_THEME
-# Catppuccin-Frappe
-# include current-theme.conf
+# Rosé Pine Moon
+include current-theme.conf
 # END_KITTY_THEME
