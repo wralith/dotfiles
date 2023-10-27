@@ -68,8 +68,27 @@ lvim.plugins = {
             -- copilot assume mapped
             vim.g.copilot_assume_mapped = true
             vim.g.copilot_no_tab_map = true
+            vim.g.copilot_filetypes = { yaml = true, yml = true }
         end,
     },
+
+    -- Kubernetes
+    {
+        "someone-stole-my-name/yaml-companion.nvim",
+        config = function()
+            require("telescope").load_extension("yaml_schema")
+            local cfg = require("yaml-companion").setup({
+                -- schemas = {
+                --     {
+                --         name = "Kubernetes 1.22.4",
+                --         uri =
+                --         "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.22.4-standalone-strict/all.json",
+                --     },
+                -- },
+            })
+            require("lvim.lsp.manager").setup("yamlls", cfg)
+        end
+    }
 }
 
 
@@ -82,7 +101,7 @@ linters.setup {
     { command = "eslint_d", filetypes = { "typescript", "typescriptreact", "js", "jsx" } }
 }
 formatters.setup {
-    { command = "prettierd", filetypes = { "typescript", "typescriptreact", "js", "jsx", "html" } }
+    { command = "prettierd", filetypes = { "typescript", "typescriptreact", "js", "jsx", "html", "markdown", "css" } }
 }
 formatters.setup {
     { command = "shfmt", filetypes = { "sh" } }
