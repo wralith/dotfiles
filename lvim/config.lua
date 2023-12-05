@@ -1,5 +1,7 @@
 lvim.log.level = "warn"
 lvim.builtin.lualine.sections.lualine_a = { "mode" }
+lvim.builtin.lualine.options.section_separators = { left = "", right = "" }
+lvim.builtin.lualine.options.component_separators = { left = "", right = "" }
 lvim.builtin.alpha.active = true
 lvim.builtin.illuminate.active = true
 lvim.use_icons = true
@@ -19,6 +21,12 @@ vim.opt.foldmethod = "indent"
 vim.opt.foldlevelstart = 90
 
 lvim.builtin.treesitter.highlight.enable = true
+
+-- hover remove borders
+lvim.builtin.cmp.window = {
+    completion = {
+    },
+}
 
 -- plugins
 lvim.plugins = {
@@ -49,6 +57,13 @@ lvim.plugins = {
             })
         end
     },
+
+    -- Debug
+    { "mfussenegger/nvim-dap" },
+    { "leoluz/nvim-dap-go" },
+    { "rcarriga/nvim-dap-ui" },
+    { "theHamsta/nvim-dap-virtual-text" },
+    { "nvim-telescope/telescope-dap.nvim" },
 
     -- Utilities
     {
@@ -91,6 +106,15 @@ lvim.plugins = {
     }
 }
 
+-- dap
+--
+local dap_ok, dapgo = pcall(require, "dap-go")
+if not dap_ok then
+    return
+end
+
+dapgo.setup()
+
 
 -- formatters and linters
 local linters = require("lvim.lsp.null-ls.linters")
@@ -98,10 +122,10 @@ local formatters = require("lvim.lsp.null-ls.formatters")
 local code_actions = require("lvim.lsp.null-ls.code_actions")
 
 linters.setup {
-    { command = "eslint_d", filetypes = { "typescript", "typescriptreact", "js", "jsx" } }
+    { command = "eslint_d", filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" } }
 }
 formatters.setup {
-    { command = "prettierd", filetypes = { "typescript", "typescriptreact", "js", "jsx", "html", "markdown", "css" } }
+    { command = "prettierd", filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "html", "markdown", "css", "json" } }
 }
 formatters.setup {
     { command = "shfmt", filetypes = { "sh" } }
