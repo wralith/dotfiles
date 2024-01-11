@@ -103,6 +103,14 @@ lvim.plugins = {
             })
             require("lvim.lsp.manager").setup("yamlls", cfg)
         end
+    },
+    {
+        "L3MON4D3/LuaSnip",
+        opts = {
+            history = true,
+            delete_check_events = "TextChanged",
+            region_check_events = "CursorMoved",
+        },
     }
 }
 
@@ -149,7 +157,45 @@ local emmet_options = {
     },
 }
 
+-- Tailwind for CVA
+require 'lspconfig'.tailwindcss.setup({
+    settings = {
+        tailwindCSS = {
+            experimental = {
+                classRegex = {
+                    { "cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]" },
+                    { "cx\\(([^)]*)\\)",  "(?:'|\"|`)([^']*)(?:'|\"|`)" }
+                },
+            },
+        },
+    },
+})
+
 require("lvim.lsp.manager").setup("emmet_ls", emmet_options)
+
+-- Post-CSS
+require("lvim.lsp.manager").setup("cssls", {
+    settings = {
+        css = {
+            validate = true,
+            lint = {
+                unknownAtRules = "ignore"
+            }
+        },
+        scss = {
+            validate = true,
+            lint = {
+                unknownAtRules = "ignore"
+            }
+        },
+        less = {
+            validate = true,
+            lint = {
+                unknownAtRules = "ignore"
+            }
+        },
+    },
+})
 
 
 vim.g.go_addtags_transform = "camelcase"
