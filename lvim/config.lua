@@ -1,6 +1,5 @@
 lvim.log.level = "warn"
 lvim.builtin.lualine.sections.lualine_a = { "mode" }
-lvim.builtin.lualine.options.section_separators = { left = "", right = "" }
 lvim.builtin.lualine.options.component_separators = { left = "", right = "" }
 lvim.builtin.alpha.active = true
 lvim.builtin.illuminate.active = true
@@ -34,6 +33,8 @@ lvim.plugins = {
     { "shaunsingh/nord.nvim" },
     { "catppuccin/nvim",                name = "catpuccin" },
     { "rose-pine/neovim",               name = "rose-pine" },
+    { "neanias/everforest-nvim" },
+    { "folke/tokyonight.nvim" },
     { "olivercederborg/poimandres.nvim" },
     { "folke/tokyonight.nvim",          lazy = "false" },
 
@@ -133,7 +134,10 @@ linters.setup {
     { command = "eslint_d", filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" } }
 }
 formatters.setup {
-    { command = "prettierd", filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "html", "markdown", "css", "json" } }
+    {
+        command = "prettierd",
+        filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "html", "markdown", "css", "json" }
+    }
 }
 formatters.setup {
     { command = "shfmt", filetypes = { "sh" } }
@@ -221,7 +225,10 @@ vim.opt.spell = true
 vim.opt.spelllang = { "en_us" }
 
 
-lvim.colorscheme = "rose-pine-moon"
+lvim.colorscheme = "everforest"
+require("everforest").setup({
+    background = "hard"
+})
 
 lvim.builtin.alpha.dashboard.section.header.val = {
     " ██░ ██  ▄▄▄     ▓██   ██▓ ▄▄▄     ▄▄▄█████▓    ▄▄▄▄    ██▓▄▄▄█████▓▄▄▄█████▓ ██▓",
