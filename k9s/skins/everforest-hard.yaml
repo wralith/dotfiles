@@ -12,6 +12,7 @@ blue: &blue "#7fbbb3"
 yellow: &yellow "#dbbc7f"
 green: &green "#83c092"
 pink: &pink "#d699b6"
+orange: &orange "#e69875"
 
 # Skin...
 k9s:
@@ -25,6 +26,9 @@ k9s:
     fgColor: *text
     bgColor: *base
     suggestColor: *green
+    border:
+      command: *orange
+      default: *blue
   # ClusterInfoView styles.
   info:
     fgColor: *green
